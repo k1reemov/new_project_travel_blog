@@ -1,0 +1,22 @@
+name: Deploy Next.js
+
+on:
+  push:
+    branches: [ master ] # Если ваша главная ветка называется main, замените master на main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 83.217.200.209
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/new_project_travel_blog
+            git pull origin master
+            npm install
+            npm run build
+            pm2 restart travel-blog
