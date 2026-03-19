@@ -24,6 +24,7 @@ export default function Post({ post }: { post: PostType }) {
                 </div>
                 <div className={styles.postFooter}>
                     <p className={styles.postLocation}>{county}, {city}</p>
+                    <p className={styles.postLocation}>{county}, {city}</p>
                     <Link href={`/posts/${id}`} className={styles.postTakeMoreInfo}>Подробнее</Link>
                 </div>
             </div>
