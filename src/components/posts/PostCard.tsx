@@ -1,8 +1,9 @@
-import {PostType} from "@/src/components/PostsList";
-import styles from "./Post.module.css"
+import {PostType} from "@/src/types/types";
+import styles from "./PostCard.module.css"
 import Link from "next/link";
+import {API_URL} from "@/src/api/posts";
 
-export default function Post({ post }: { post: PostType }) {
+export default function PostCard({ post }: { post: PostType }) {
     const {
         id,
         title,
@@ -12,11 +13,9 @@ export default function Post({ post }: { post: PostType }) {
         photo,
     } = post
 
-    const RES_URL = 'https://travelblog.skillbox.cc';
-
     return (
         <div className={styles.postCard}>
-            <img className={styles.postImg} src={`${RES_URL}${photo}`}/>
+            <img className={styles.postImg} src={`${API_URL}${photo}`}/>
             <div className={styles.postInfo}>
                 <div className={styles.postHeader}>
                     <h3 className={styles.postTitle}>{title}</h3>

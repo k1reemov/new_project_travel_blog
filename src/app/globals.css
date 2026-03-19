@@ -91,6 +91,10 @@ input[type='file'] {
     max-width: 100%;
 }
 
+body {
+    background: #F9F9F9;
+}
+
 .container {
     display: flex;
     justify-content: center;

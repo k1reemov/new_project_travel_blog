@@ -1,9 +1,9 @@
-export default function page() {
+import PostInfo from "@/src/components/posts/PostInfo";
+
+export default async function PagePost({params}) {
+    const {id} = await params;
+
     return (
-        <div>
-            <h1>Пост</h1>
-            <h1>Пост</h1>
-            <h1>Пост</h1>
-        </div>
+        <PostInfo postId = {id} />
     )
 }

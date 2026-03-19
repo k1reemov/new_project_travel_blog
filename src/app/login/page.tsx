@@ -1,9 +1,8 @@
-import PostsList from "@/src/components/PostsList";
+import PostsCardsList from "@/src/components/posts/PostsCardsList";
 
 export default function LoginPage() {
     return (
         <div>
-            <PostsList />
         </div>
     )
 }

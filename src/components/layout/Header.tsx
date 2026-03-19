@@ -1,6 +1,6 @@
 import Link from "next/link";
-import LogoIcon from "@/src/components/icons/LogoIcon"; // Твой путь до иконки
-import styles from "./Header.module.css"; // Обязательный импорт стилей
+import LogoIcon from "@/src/components/ui/icons/LogoIcon";
+import styles from "./Header.module.css";
 
 export default function Header() {
     return (

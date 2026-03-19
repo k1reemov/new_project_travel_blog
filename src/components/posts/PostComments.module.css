@@ -1,0 +1,29 @@
+.CommentCard {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.CommentAuthor {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.CommentDate {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868383;
+    margin-bottom: 5px;
+}
+
+.CommentInfo {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}

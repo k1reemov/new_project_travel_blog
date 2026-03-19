@@ -1,12 +1,12 @@
-import PostsList from "@/src/components/PostsList";
-import Button from "@/src/components/Button";
-import styles from "./addNewPostButton.module.css"
+import PostsCardsList from "@/src/components/posts/PostsCardsList";
+import Button from "@/src/components/ui/Button";
+import styles from "../components/ui/Button.module.css"
 
 export default function Home() {
 
     return (
         <div>
-            <PostsList />
+            <PostsCardsList />
             <div className="container">
                 <Button name={'Добавить мое путешествие'} className={styles.addNewPostButton}/>
             </div>
