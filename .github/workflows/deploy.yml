@@ -2,7 +2,7 @@ name: Deploy Next.js
 
 on:
   push:
-    branches: [ master ] # Если ваша главная ветка называется main, замените master на main
+    branches: [ master ]
 
 jobs:
   deploy:
@@ -17,6 +17,6 @@ jobs:
           script: |
             cd /var/www/new_project_travel_blog
             git pull origin master
-            npm install
+            npm install              
             npm run build
             pm2 restart travel-blog
