@@ -1,25 +1,9 @@
-.addNewPostButton {
+.defaultButton {
     display: flex;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 13px;
-    color: #FFFFFF;
-    background: #FFA902;
-    border-radius: 10px;
-    padding: 19px 30px;
-    margin-bottom: 60px;
-}
-
-.addNewCommentButton {
-    display: flex;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins';
+    font-family: var(--font-poppins);
     font-weight: 600;
     font-size: 16px;
     line-height: 13px;
@@ -34,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins';
+    font-family: var(--font-poppins);
     font-weight: 600;
     font-size: 16px;
     line-height: 13px;

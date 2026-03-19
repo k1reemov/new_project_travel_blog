@@ -8,7 +8,7 @@ export default function Home() {
         <div>
             <PostsCardsList />
             <div className="container">
-                <Button name={'Добавить мое путешествие'} className={styles.addNewPostButton}/>
+                <Button name={'Добавить мое путешествие'} className={styles.defaultButton}/>
             </div>
         </div>
   );

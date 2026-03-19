@@ -1,7 +1,7 @@
 import {PostType} from "@/src/types/types";
 import styles from "./PostCard.module.css"
-import Link from "next/link";
 import {API_URL} from "@/src/api/posts";
+import Button from "@/src/components/ui/Button";
 
 export default function PostCard({ post }: { post: PostType }) {
     const {
@@ -23,7 +23,11 @@ export default function PostCard({ post }: { post: PostType }) {
                 </div>
                 <div className={styles.postFooter}>
                     <p className={styles.postLocation}>{county}, {city}</p>
-                    <Link href={`/posts/${id}`} className={styles.postTakeMoreInfo}>Подробнее</Link>
+                    <Button
+                        page={`posts/${id}`}
+                        name={'Подробнее'}
+                        className={styles.postTakeMoreInfo}
+                    />
                 </div>
             </div>
         </div>

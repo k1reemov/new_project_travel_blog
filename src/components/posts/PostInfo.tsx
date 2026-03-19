@@ -24,8 +24,16 @@ export default async function PostInfo({postId}) {
                 </div>
                 <PostComments comments={post.comments} />
                 <div className={postStyle.Buttons}>
-                    <Button name={'Назад'} className={buttonStyle.backToHomeButton} />
-                    <Button name={'Ваше впечатление об этом месте'} className={buttonStyle.addNewCommentButton} />
+                    <Button
+                        page={''}
+                        name={'Назад'}
+                        className={buttonStyle.backToHomeButton}
+                    />
+                    <Button
+                        page={''}
+                        name={'Ваше впечатление об этом месте'}
+                        className={buttonStyle.defaultButton}
+                    />
                 </div>
             </div>
         </div>
