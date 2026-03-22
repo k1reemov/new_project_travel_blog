@@ -92,6 +92,7 @@ input[type='file'] {
 }
 
 body {
+    font-family: var(--font-poppins);
     background: #F9F9F9;
 }
 

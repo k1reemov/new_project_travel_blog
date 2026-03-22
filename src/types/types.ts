@@ -29,3 +29,13 @@ export interface UserInfoType {
     city: string;
     bio: string;
 }
+
+export interface FormInputType {
+    className?: string
+    id: string
+    label: string
+    type: string
+    placeholder: string
+    value: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}

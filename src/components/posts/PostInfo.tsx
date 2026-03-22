@@ -16,23 +16,19 @@ export default async function PostInfo({postId}) {
             <img className={postStyle.PostInfoImg} src={`${API_URL}${post.photo}`}/>
             <div className={postStyle.PostContainer}>
                 <div className={postStyle.PostInfoCard}>
-                    <div className={postStyle.PostInfoTitle}>
-                        <p></p>
-                        <h3>{post.title}</h3>
-                    </div>
+                    <h3 className={postStyle.PostInfoTitle}>{`${post.city} ${post.title}`}</h3>
                     <p className={postStyle.PostInfoDescription}>{post.description}</p>
                 </div>
                 <PostComments comments={post.comments} />
                 <div className={postStyle.Buttons}>
                     <Button
-                        page={''}
+                        href={''}
                         name={'Назад'}
-                        className={buttonStyle.backToHomeButton}
                     />
                     <Button
-                        page={''}
+                        href={''}
                         name={'Ваше впечатление об этом месте'}
-                        className={buttonStyle.defaultButton}
+                        variant='filled'
                     />
                 </div>
             </div>

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: calc((100% - 60px) / 3);
-    height: 100%;
     background: #FFFFFF;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -19,10 +18,11 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
 .postTitle {
-    font-family: 'Poppins';
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
@@ -31,7 +31,6 @@
 }
 
 .postDescription {
-    font-family: 'Poppins';
     font-weight: 400;
     font-size: 15px;
     line-height: 27px;
@@ -46,20 +45,8 @@
 }
 
 .postLocation {
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 26px;
     color: #141414;
-}
-
-.postTakeMoreInfo {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 26px;
-    text-decoration: underline;
-    color: #FFA902;
 }

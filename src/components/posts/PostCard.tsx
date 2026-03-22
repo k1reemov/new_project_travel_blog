@@ -2,6 +2,7 @@ import {PostType} from "@/src/types/types";
 import styles from "./PostCard.module.css"
 import {API_URL} from "@/src/api/posts";
 import Button from "@/src/components/ui/Button";
+import Image from "next/image";
 
 export default function PostCard({ post }: { post: PostType }) {
     const {
@@ -15,7 +16,13 @@ export default function PostCard({ post }: { post: PostType }) {
 
     return (
         <div className={styles.postCard}>
-            <img className={styles.postImg} src={`${API_URL}${photo}`}/>
+            <Image
+                className={styles.postImg}
+                src={`${API_URL}${photo}`}
+                alt={title}
+                width={370}
+                height={288}
+            />
             <div className={styles.postInfo}>
                 <div className={styles.postHeader}>
                     <h3 className={styles.postTitle}>{title}</h3>
@@ -24,9 +31,9 @@ export default function PostCard({ post }: { post: PostType }) {
                 <div className={styles.postFooter}>
                     <p className={styles.postLocation}>{county}, {city}</p>
                     <Button
-                        page={`posts/${id}`}
+                        href={`posts/${id}`}
                         name={'Подробнее'}
-                        className={styles.postTakeMoreInfo}
+                        variant={'link'}
                     />
                 </div>
             </div>
