@@ -1,0 +1,40 @@
+.profileCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.profilePhotoCard {
+    display: flex;
+}
+
+.profileInfoCard {
+    display: flex;
+}
+
+.profileTitle {
+    display: flex;
+}
+
+.profileUserName{
+
+}
+
+.profileUserFrom {
+
+}
+
+.profileUserSection {
+
+}
+
+.profileUserCity {
+
+}
+
+.profileUserAbout {
+
+}
+
+.profileUserAboutInfo {
+
+}

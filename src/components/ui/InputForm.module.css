@@ -16,7 +16,7 @@
     color: rgba(0, 0, 0, 0.85);
 }
 
-.inputLabelTitle::before {
+.inputLabelTitle.isRequired::before {
     content: "*";
     margin-right: 4px;
     color: red;

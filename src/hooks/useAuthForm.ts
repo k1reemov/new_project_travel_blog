@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {loginUser, registerUser} from "@/src/api/auth";
 
-export function useAuthForm() {
+export async function useAuthForm() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword , setConfirmPassword ] = useState('');
@@ -10,13 +10,13 @@ export function useAuthForm() {
     const handleSubmitLogin = async (e: React.FormEvent) => {
         e.preventDefault(); // Останавливаем перезагрузку страницы
         console.log("Логин:", login);
-        await loginUser(login, password, setHasError);
+        await loginUser(login, password);
     };
 
     const handleSubmitRegister = async (e: React.FormEvent) => {
         e.preventDefault(); // Останавливаем перезагрузку страницы
         console.log("Логин:", login);
-        await registerUser(login, password, setHasError);
+        await registerUser(login, password);
     };
 
     return {

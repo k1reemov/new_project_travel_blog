@@ -9,13 +9,18 @@ export default function InputForm(props: FormInputType) {
         type,
         placeholder,
         value,
+        required = false,
         onChange
     } = props
 
     return (
         <div className={`${styles.inputWrapper} ${className || ''}`.trim()}>
             <label className={styles.inputLabel} htmlFor={id}>
-                <span className={styles.inputLabelTitle}>{label}</span>
+                <span
+                    className={`${styles.inputLabelTitle} ${required ? styles.isRequired : ''}`.trim()}
+                >
+                    {label}
+                </span>
             </label>
             <input
                 className={styles.inputField}
@@ -24,7 +29,7 @@ export default function InputForm(props: FormInputType) {
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
-                required
+                required={required}
             />
         </div>
     )

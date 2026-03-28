@@ -1,8 +1,11 @@
+'use server'
+
 import {API_URL} from "@/src/api/posts";
+import { cookies } from 'next/headers';
 
 type SetErrorFn = (value: boolean) => void;
 
-export async function loginUser(email: string, pass: string, setHasError: SetErrorFn) {
+export async function loginUser(email: string, pass: string) {
     try {
         const response = await fetch(`${API_URL}/api/login`, {
             method: "POST",
@@ -15,22 +18,29 @@ export async function loginUser(email: string, pass: string, setHasError: SetErr
             }),
         });
 
-        console.log("Статус ответа:", response.status);
+        const data = await response.json();
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.log("Сервер отказал:", errorData);
-        } else {
-            const data = await response.json();
-            console.log("Успех!");
+        console.log("=== ОТВЕТ ОТ API ===", response.status, data);
+
+
+        if (data.token) {
+            const cookieStore = await cookies();
+            cookieStore.set('auth_token', data.token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'lax',
+                path: '/',
+                maxAge: 60 * 60 * 24 * 7
+            });
+            return { success: true };
         }
+
     } catch (error) {
-        setHasError(true);
-        console.log("Нет!");
+        console.log("Сработало исключение:", error);
     }
 }
 
-export async function registerUser(email: string, pass: string, setHasError: SetErrorFn) {
+export async function registerUser(email: string, pass: string) {
     try {
         const response = await fetch(`${API_URL}/api/register`, {
             method: "POST",
@@ -43,17 +53,25 @@ export async function registerUser(email: string, pass: string, setHasError: Set
             }),
         });
 
-        console.log("Статус ответа:", response.status);
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.log("Сервер отказал:", errorData);
-        } else {
-            const data = await response.json();
-            console.log("Успех!");
+        const data = await response.json();
+
+        console.log("=== ОТВЕТ ОТ API ===", response.status, data);
+
+
+        if (data.token) {
+            const cookieStore = await cookies();
+            cookieStore.set('auth_token', data.token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'lax',
+                path: '/',
+                maxAge: 60 * 60 * 24 * 7
+            });
+            return { success: true };
         }
+
     } catch (error) {
-        setHasError(true);
-        console.log("Нет!");
+        console.log("Сработало исключение:", error);
     }
 }

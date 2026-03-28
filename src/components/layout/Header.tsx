@@ -1,8 +1,12 @@
 import Link from "next/link";
 import LogoIcon from "@/src/components/ui/icons/LogoIcon";
 import styles from "./Header.module.css";
+import { cookies } from 'next/headers';
 
-export default function Header() {
+export default async function Header() {
+    const cookieStore = await cookies();
+    const isAuth = cookieStore.has('auth_token');
+
     return (
         <div className={styles.headerBackGround}>
             <div className={`container ${styles.header}`}>
@@ -13,9 +17,15 @@ export default function Header() {
                             Travel
                         </Link>
                     </div>
-                    <Link href="/login" className={styles.headerLoginLink}>
-                        Войти
-                    </Link>
+                    {
+                        isAuth ? (
+                            <Link href="/profile" >Профиль</Link>
+                        ) : (
+                        <Link href="/login" className={styles.headerLoginLink}>
+                            Войти
+                        </Link>
+                        )
+                    }
                 </div>
 
                 <div className={styles.hero}>
