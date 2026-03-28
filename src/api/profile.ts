@@ -13,6 +13,7 @@ export async function getProfileInfo() {
     const response = await fetch(`${API_URL}/api/user`, {
         headers: {
             'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
     });
@@ -30,6 +31,7 @@ export async function putEditProfileInfo(fullName, cityName, aboutInfo) {
         method: "PUT",
         headers: {
             'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
