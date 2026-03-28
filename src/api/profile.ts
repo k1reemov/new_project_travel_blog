@@ -7,7 +7,8 @@ import { cookies } from "next/headers";
 export async function getProfileInfo() {
     const cookieStore = await cookies();
 
-    const token = cookieStore.get('auth_token')?.value;
+    const rawToken = cookieStore.get('auth_token')?.value;
+    const token = rawToken ? decodeURIComponent(rawToken) : '';
 
     const response = await fetch(`${API_URL}/api/user`, {
         headers: {
@@ -22,7 +23,8 @@ export async function getProfileInfo() {
 export async function putEditProfileInfo(fullName, cityName, aboutInfo) {
     const cookieStore = await cookies();
 
-    const token = cookieStore.get('auth_token')?.value;
+    const rawToken = cookieStore.get('auth_token')?.value;
+    const token = rawToken ? decodeURIComponent(rawToken) : '';
 
     const response = await fetch(`${API_URL}/api/user`, {
         method: "PUT",
