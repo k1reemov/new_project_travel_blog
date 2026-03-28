@@ -35,7 +35,7 @@ export interface FormInputType {
     id: string
     label: string
     type: string
-    placeholder: string
+    placeholder?: string
     value: string
     required?: boolean
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void

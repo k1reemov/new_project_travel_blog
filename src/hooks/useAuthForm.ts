@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {loginUser, registerUser} from "@/src/api/auth";
 
-export async function useAuthForm() {
+export function useAuthForm() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword , setConfirmPassword ] = useState('');
