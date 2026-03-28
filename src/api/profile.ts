@@ -28,7 +28,7 @@ export async function putEditProfileInfo(fullName, cityName, aboutInfo) {
     const token = rawToken ? decodeURIComponent(rawToken) : '';
 
     const response = await fetch(`${API_URL}/api/user`, {
-        method: "PUT",
+        method: "POST",
         headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/json',
