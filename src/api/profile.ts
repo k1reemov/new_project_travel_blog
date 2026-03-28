@@ -37,13 +37,12 @@ export async function putEditProfileInfo(fullName, cityName, aboutInfo) {
     });
 
     console.log("Бекенд статус:", response.status);
-
     if (!response.ok) {
-        revalidatePath('/profile/editor');
+        const errText = await response.text();
+        console.error("Текст ошибки от бекенда:", errText);
+        return { error: errText };
     }
 
-    if (!response.ok) {
-        console.error("Текст ошибки от бекенда:", await response.text());
-    }
+    revalidatePath('/profile/editor');
     return response.json();
 }
