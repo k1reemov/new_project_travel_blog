@@ -27,7 +27,7 @@ export async function loginUser(email: string, pass: string) {
             const cookieStore = await cookies();
             cookieStore.set('auth_token', data.token, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === 'production',
+                secure: false,
                 sameSite: 'lax',
                 path: '/',
                 maxAge: 60 * 60 * 24 * 7
