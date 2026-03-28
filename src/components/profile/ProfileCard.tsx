@@ -3,6 +3,8 @@ import {getProfileInfo} from "@/src/api/profile";
 import Button from "@/src/components/ui/Button";
 
 export default async function ProfileCard () {
+    console.log("=== ЧТО ПРИСЛАЛ СЕРВЕР ДЛЯ ПРОФИЛЯ ===", profileData);
+
     const {
         id,
         full_name,
