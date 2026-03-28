@@ -11,7 +11,8 @@ export async function getProfileInfo() {
 
     const response = await fetch(`${API_URL}/api/user`, {
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
         }
     });
 
@@ -24,7 +25,7 @@ export async function putEditProfileInfo(fullName, cityName, aboutInfo) {
     const token = cookieStore.get('auth_token')?.value;
 
     const response = await fetch(`${API_URL}/api/user`, {
-        method: "POST",
+        method: "PUT",
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
