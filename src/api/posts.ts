@@ -1,4 +1,4 @@
-export const API_URL = 'https://travelblog.skillbox.cc';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function getPosts() {
     const response = await fetch(`${API_URL}/api/posts`);

@@ -1,12 +1,15 @@
 "use client"
 
-import {useEditProfile} from "@/src/hooks/useEditProfile";
-import styles from "@/src/components/profile/ProfileCard.module.css";
+import {useEditProfile} from "@/src/app/profile/editor/hooks/useEditProfile";
+import {useRef} from "react";
+import styles from "@/src/app/profile/editor/components/ProfileEditor.module.css"
 import InputForm from "@/src/components/ui/InputForm";
+import TextAreaForm from "@/src/components/ui/TextAreaForm";
 import Button from "@/src/components/ui/Button";
+import Image from "next/image";
+import AddNewPhoto from "@/src/app/profile/components/AddNewPhoto";
 
 export default function ProfileEditor({ initialData }) {
-
     const {
         fullName,
         setFullName,
@@ -19,12 +22,11 @@ export default function ProfileEditor({ initialData }) {
 
     return (
         <div className={styles.profileCard}>
-            <div className={styles.profilePhoto}>
-
-            </div>
-            <div>
+            <AddNewPhoto photo={initialData.photo}/>
+            <div className={styles.profileInfoCard}>
                 <form onSubmit={handleSaveEditProfile}>
                     <InputForm
+                        className={styles.profileInfoForm}
                         id='fullName'
                         label='ФИО'
                         type='text'
@@ -37,6 +39,7 @@ export default function ProfileEditor({ initialData }) {
                         }
                     />
                     <InputForm
+                        className={styles.profileInfoForm}
                         id='cityName'
                         label='Город'
                         type='text'
@@ -48,10 +51,11 @@ export default function ProfileEditor({ initialData }) {
                             }
                         }
                     />
-                    <InputForm
+                    <TextAreaForm
+                        className={styles.profileInfoForm}
                         id='aboutInfo'
                         label='О себе'
-                        type='text'
+                        maxLength={600}
                         value={aboutInfo}
                         onChange={
                             (e) => {

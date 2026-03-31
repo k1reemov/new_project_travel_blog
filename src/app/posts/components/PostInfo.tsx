@@ -1,19 +1,24 @@
-import {API_URL, getPostInfo} from "@/src/api/posts";
+import {getPostInfo} from "@/src/api/posts";
 import {PostPageType} from "@/src/types/types";
 import Button from "@/src/components/ui/Button";
-import PostComments from "@/src/components/posts/PostComments";
+import PostComments from "@/src/app/posts/components/PostComments";
 import postStyle from "./PostInfo.module.css"
-import buttonStyle from "@/src/components/ui/Button.module.css";
+import Image from "next/image";
 
 export default async function PostInfo({postId}) {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     const post: PostPageType = await getPostInfo(postId)
 
-
-
     return (
         <div className={postStyle.PostInfoPage}>
-            <img className={postStyle.PostInfoImg} src={`${API_URL}${post.photo}`}/>
+            <Image
+                className={postStyle.PostInfoImg}
+                src={`${API_URL}${post.photo}`}
+                alt={post.title}
+                width={370}
+                height={288}
+            />
             <div className={postStyle.PostContainer}>
                 <div className={postStyle.PostInfoCard}>
                     <h3 className={postStyle.PostInfoTitle}>{`${post.city} ${post.title}`}</h3>

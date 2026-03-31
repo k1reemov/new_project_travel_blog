@@ -1,10 +1,11 @@
 import {PostType} from "@/src/types/types";
 import styles from "./PostCard.module.css"
-import {API_URL} from "@/src/api/posts";
 import Button from "@/src/components/ui/Button";
 import Image from "next/image";
 
 export default function PostCard({ post }: { post: PostType }) {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const {
         id,
         title,

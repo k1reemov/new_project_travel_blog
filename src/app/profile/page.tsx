@@ -1,9 +1,12 @@
-import ProfileCard from "@/src/components/profile/ProfileCard";
+import ProfileCard from "@/src/app/profile/components/ProfileCard";
+import {getProfileInfo} from "@/src/entities/user/api/actions";
 
-export default function ProfilePage() {
+export default async function ProfilePage() {
+    const profileData= await getProfileInfo();
+
     return (
         <>
-            <ProfileCard />
+            <ProfileCard initialData={profileData}/>
         </>
     )
 }

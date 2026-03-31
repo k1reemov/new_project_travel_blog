@@ -1,12 +1,16 @@
 import {useState} from 'react';
-import {getProfileInfo, putEditProfileInfo} from "@/src/api/profile";
+import {useRouter} from 'next/navigation';
+import {postEditProfileInfo} from '@/src/entities/user/api/actions'
 
 export function useEditProfile(initialData) {
+    const router = useRouter();
+
     const {
         full_name,
         city,
         country,
         bio,
+        photo,
     } = initialData;
 
     const [fullName, setFullName] = useState(full_name);
@@ -16,7 +20,8 @@ export function useEditProfile(initialData) {
     const handleSaveEditProfile = async (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Сохранено:");
-        await putEditProfileInfo(fullName, cityName, aboutInfo);
+        await postEditProfileInfo(fullName, cityName, aboutInfo);
+        router.push('/profile');
     };
 
     return {

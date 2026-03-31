@@ -1,32 +1,41 @@
 import styles from "./ProfileCard.module.css"
-import {getProfileInfo} from "@/src/api/profile";
-import Button from "@/src/components/ui/Button";
+import EditProfileIcon from "@/src/components/ui/icons/EditProfileIcon";
+import AddNewPhoto from "@/src/app/profile/components/AddNewPhoto";
 
-export default async function ProfileCard () {
+interface ProfileDataTypes {
+    id: number | string;
+    full_name: string;
+    city: string;
+    country?: string;
+    bio: string;
+    photo: string;
+}
 
+export default function ProfileCard({ initialData }: { initialData: ProfileDataTypes }) {
     const {
         id,
         full_name,
         city,
         country,
         bio,
-    } = await getProfileInfo();
+        photo,
+    } = initialData;
+
+    console.log('Профиль', photo);
 
     return (
         <div className={styles.profileCard}>
-            <div className={styles.profilePhoto}>
-
-            </div>
+            <AddNewPhoto
+                fullName={full_name}
+                photo={photo}
+            />
             <div className={styles.profileInfo}>
                 <div className={styles.profileTitle}>
                     <h3 className={styles.profileUserName}>{full_name}</h3>
-                    <Button
-                        name='поменять данные'
-                        href='profile/editor'
-                    />
+                    <EditProfileIcon />
                 </div>
                 <div className={styles.profileUserFrom}>
-                    <p className={styles.profileUserSection}></p>
+                    <p className={styles.profileUserSection}>Город</p>
                     <p className={styles.profileUserFromInfo}>{`${city} ${country}`}</p>
                 </div>
                 <div className={styles.profileUserAbout}>

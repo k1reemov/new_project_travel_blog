@@ -28,7 +28,7 @@ export default function Button(props:ButtonProps) {
     if (href) {
         return (
             <Link
-                href={`/${href}`}
+                href={href}
                 className={combinedClassName}
             >
                 {name}

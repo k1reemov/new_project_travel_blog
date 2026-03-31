@@ -1,0 +1,17 @@
+.hiddenInput {
+    display: none;
+}
+
+.uploadLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.uploadText {
+    color: #F89B29;
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}

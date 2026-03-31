@@ -1,7 +1,7 @@
 import {CommentType} from "@/src/types/types"
 import styles from "./PostComments.module.css"
 
-export default async function PostComments({comments}) {
+export default function PostComments({comments}) {
 
     return (
         <div>

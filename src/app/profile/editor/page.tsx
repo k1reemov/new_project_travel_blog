@@ -1,5 +1,5 @@
-import ProfileEditor from "@/src/components/profile/ProfileEditor";
-import { getProfileInfo } from "@/src/api/profile";
+import ProfileEditor from "@/src/app/profile/editor/components/ProfileEditor";
+import {getProfileInfo} from '@/src/entities/user/api/actions'
 export default async function ProfileEditorPage() {
     const profileData = await getProfileInfo();
 

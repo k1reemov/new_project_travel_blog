@@ -1,4 +1,4 @@
-import PostsCardsList from "@/src/components/posts/PostsCardsList";
+import PostsCardsList from "@/src/app/posts/components/PostsCardsList";
 import Button from "@/src/components/ui/Button";
 
 export default function Home() {
