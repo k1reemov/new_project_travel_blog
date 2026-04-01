@@ -13,7 +13,7 @@ export default async function Header() {
                 <div className={styles.headerTopBar}>
                     <div className={styles.logo}>
                         <LogoIcon/>
-                        <Link href="/public" className={styles.logoTitle}>
+                        <Link href="/" className={styles.logoTitle}>
                             Travel
                         </Link>
                     </div>
