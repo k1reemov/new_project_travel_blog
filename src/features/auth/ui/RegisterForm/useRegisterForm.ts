@@ -9,7 +9,6 @@ export function useRegisterForm() {
 
     const handleSubmitRegister = async (e: React.FormEvent) => {
         e.preventDefault(); // Останавливаем перезагрузку страницы
-        console.log("Логин:", login);
         await registerUser(login, password);
     };
 

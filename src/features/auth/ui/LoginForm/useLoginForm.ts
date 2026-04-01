@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {loginUser, registerUser} from "@/src/features/auth/api/auth.actions";
+import {loginUser} from "@/src/features/auth/api/auth.actions";
 
 export function useLoginForm() {
     const [login, setLogin] = useState('');
