@@ -1,0 +1,18 @@
+.profileCard {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.profileInfoCard {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.profileInfoForm {
+    margin-bottom: 30px;
+}

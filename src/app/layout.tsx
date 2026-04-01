@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/src/components/layout/Header";
+import Header from "@/src/widgets/header/ui/Header";
 
 const poppins = Poppins({
     subsets: ['latin'],

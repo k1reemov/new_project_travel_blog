@@ -1,7 +1,7 @@
-import {getPostInfo} from "@/src/api/posts";
+import {getPostInfo} from "@/src/entities/post/api/posts";
 import {PostPageType} from "@/src/types/types";
-import Button from "@/src/components/ui/Button";
-import PostComments from "@/src/app/posts/components/PostComments";
+import Button from "@/src/shared/ui/Button";
+import PostComments from "@/src/entities/post/ui/PostComments";
 import postStyle from "./PostInfo.module.css"
 import Image from "next/image";
 

@@ -1,13 +1,11 @@
 "use client"
 
-import {useEditProfile} from "@/src/app/profile/editor/hooks/useEditProfile";
-import {useRef} from "react";
-import styles from "@/src/app/profile/editor/components/ProfileEditor.module.css"
-import InputForm from "@/src/components/ui/InputForm";
-import TextAreaForm from "@/src/components/ui/TextAreaForm";
-import Button from "@/src/components/ui/Button";
-import Image from "next/image";
-import AddNewPhoto from "@/src/app/profile/components/AddNewPhoto";
+import {useEditProfile} from "@/src/features/profile-edit/ui/useEditProfile";
+import styles from "@/src/features/profile-edit/ui/ProfileEditor.module.css"
+import InputForm from "@/src/shared/ui/InputForm";
+import TextAreaForm from "@/src/shared/ui/TextAreaForm";
+import Button from "@/src/shared/ui/Button";
+import AddNewPhoto from "@/src/features/profile-edit/ui/AddNewPhoto";
 
 export default function ProfileEditor({ initialData }) {
     const {
@@ -22,7 +20,10 @@ export default function ProfileEditor({ initialData }) {
 
     return (
         <div className={styles.profileCard}>
-            <AddNewPhoto photo={initialData.photo}/>
+            <AddNewPhoto
+                photo={initialData.photo}
+                fullName={initialData.full_name}
+            />
             <div className={styles.profileInfoCard}>
                 <form onSubmit={handleSaveEditProfile}>
                     <InputForm

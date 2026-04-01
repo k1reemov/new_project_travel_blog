@@ -1,6 +1,6 @@
 import {PostType} from "@/src/types/types";
 import styles from "./PostCard.module.css"
-import Button from "@/src/components/ui/Button";
+import Button from "@/src/shared/ui/Button";
 import Image from "next/image";
 
 export default function PostCard({ post }: { post: PostType }) {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LogoIcon from "@/src/components/ui/icons/LogoIcon";
+import LogoIcon from "@/src/shared/ui/icons/LogoIcon";
 import styles from "./Header.module.css";
 import { cookies } from 'next/headers';
 
@@ -13,7 +13,7 @@ export default async function Header() {
                 <div className={styles.headerTopBar}>
                     <div className={styles.logo}>
                         <LogoIcon/>
-                        <Link href="/" className={styles.logoTitle}>
+                        <Link href="/public" className={styles.logoTitle}>
                             Travel
                         </Link>
                     </div>

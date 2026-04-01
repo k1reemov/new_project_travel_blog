@@ -1,6 +1,6 @@
 import styles from "./ProfileCard.module.css"
-import EditProfileIcon from "@/src/components/ui/icons/EditProfileIcon";
-import AddNewPhoto from "@/src/app/profile/components/AddNewPhoto";
+import EditProfileIcon from "@/src/shared/ui/icons/EditProfileIcon";
+import AddNewPhoto from "@/src/features/profile-edit/ui/AddNewPhoto";
 
 interface ProfileDataTypes {
     id: number | string;

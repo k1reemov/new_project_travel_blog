@@ -1,4 +1,4 @@
-import ProfileEditor from "@/src/app/profile/editor/components/ProfileEditor";
+import ProfileEditor from "@/src/features/profile-edit/ui/ProfileEditor";
 import {getProfileInfo} from '@/src/entities/user/api/actions'
 export default async function ProfileEditorPage() {
     const profileData = await getProfileInfo();

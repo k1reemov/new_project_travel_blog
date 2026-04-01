@@ -1,4 +1,4 @@
-import RegisterForm from "@/src/app/register/components/RegisterForm";
+import RegisterForm from "@/src/features/auth/ui/RegisterForm/RegisterForm";
 
 export default function RegisterPage() {
     return (

@@ -1,8 +1,8 @@
 "use client"
 
-import Button from "@/src/components/ui/Button";
-import {useAuthForm} from "@/src/hooks/useAuthForm";
-import InputForm from "@/src/components/ui/InputForm";
+import Button from "@/src/shared/ui/Button";
+import {useLoginForm} from "@/src/features/auth/ui/LoginForm/useLoginForm";
+import InputForm from "@/src/shared/ui/InputForm";
 import styles from "./LoginForm.module.css"
 
 export default function AuthForm() {
@@ -14,7 +14,7 @@ export default function AuthForm() {
         hasError,
         setHasError,
         handleSubmitLogin,
-    } = useAuthForm();
+    } = useLoginForm();
 
     return (
         <div className={styles.formLogin}>
@@ -47,7 +47,7 @@ export default function AuthForm() {
                     />
                     <div className={styles.buttonsContainer}>
                         <Button
-                            href={'register/'}
+                            href={'/register'}
                             name={'Зарегистрироваться'}
                         />
                         <Button

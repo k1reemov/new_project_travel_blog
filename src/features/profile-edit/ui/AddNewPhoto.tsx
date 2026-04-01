@@ -1,9 +1,9 @@
 "use client"
 
-import styles from "@/src/app/profile/editor/components/ProfileEditor.module.css";
+import styles from '@/src/features/profile-edit/ui/AddNewPhoto.module.css';
 import Image from "next/image";
 import {useRef} from "react";
-import {useAddNewPhoto} from "@/src/app/profile/hooks/useAddNewPhoto";
+import {useAddNewPhoto} from "@/src/features/profile-edit/ui/useAddNewPhoto";
 
 interface NewPhotoTypes {
     fullName: string;

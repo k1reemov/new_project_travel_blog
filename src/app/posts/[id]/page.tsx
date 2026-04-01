@@ -1,4 +1,4 @@
-import PostInfo from "@/src/app/posts/components/PostInfo";
+import PostInfo from "@/src/entities/post/ui/PostInfo";
 
 export default async function PagePost({params}) {
     const {id} = await params;

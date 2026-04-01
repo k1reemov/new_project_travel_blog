@@ -1,12 +1,3 @@
-.profileCard {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-    gap: 30px;
-}
-
 .profilePhoto {
     display: flex;
     flex-direction: column;
@@ -34,14 +25,4 @@
 }
 .uploadButton:hover {
     opacity: 0.8;
-}
-
-.profileInfoCard {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-}
-
-.profileInfoForm {
-    margin-bottom: 30px;
 }

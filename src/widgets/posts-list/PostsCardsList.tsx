@@ -1,6 +1,6 @@
-import PostCard from "@/src/app/posts/components/PostCard";
+import PostCard from "@/src/entities/post/ui/PostCard";
 import styles from "./PostsCardsList.module.css"
-import {getPosts} from "@/src/api/posts";
+import {getPosts} from "@/src/entities/post/api/posts";
 import {PostType} from "@/src/types/types";
 
 export default async function PostsCardsList() {

@@ -23,9 +23,9 @@ export async function getProfileInfo() {
 }
 
 export async function postEditProfileInfo(
-    fullName,
-    cityName,
-    aboutInfo,
+    fullName: string,
+    cityName: string,
+    aboutInfo: string,
 ) {
     const cookieStore = await cookies();
 

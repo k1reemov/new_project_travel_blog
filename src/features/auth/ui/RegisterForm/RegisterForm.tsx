@@ -1,8 +1,8 @@
 "use client"
 
-import {useAuthForm} from "@/src/hooks/useAuthForm";
-import Button from "@/src/components/ui/Button";
-import InputForm from "@/src/components/ui/InputForm";
+import {useRegisterForm} from "@/src/features/auth/ui/RegisterForm/useRegisterForm";
+import Button from "@/src/shared/ui/Button";
+import InputForm from "@/src/shared/ui/InputForm";
 import styles from "./RegisterForm.module.css"
 
 export default function RegisterForm() {
@@ -15,9 +15,8 @@ export default function RegisterForm() {
         setConfirmPassword,
         hasError,
         setHasError,
-        handleSubmitLogin,
         handleSubmitRegister,
-    } = useAuthForm();
+    } = useRegisterForm();
 
     return (
         <div className={styles.formRegister}>

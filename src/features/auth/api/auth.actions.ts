@@ -1,11 +1,13 @@
 'use server'
 
-import {API_URL} from "@/src/api/posts";
 import { cookies } from 'next/headers';
 
 type SetErrorFn = (value: boolean) => void;
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export async function loginUser(email: string, pass: string) {
+
     try {
         const response = await fetch(`${API_URL}/api/login`, {
             method: "POST",

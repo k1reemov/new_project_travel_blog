@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import styles from "@/src/components/ui/Button.module.css";
+import styles from "@/src/shared/ui/Button.module.css";
 
 interface ButtonProps {
-    href?: string;        // Опционально, если это кнопка
+    href?: string;
     name: string;
     variant?: 'default' | 'filled' | 'arrow' | 'link';
-    typeButton?: 'button' | 'submit' | 'reset'; // Конкретные типы
+    typeButton?: 'button' | 'submit' | 'reset';
     className?: string;
 }
 
